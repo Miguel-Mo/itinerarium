@@ -42,7 +42,7 @@ class RouteServiceProvider extends ServiceProvider
             /**
              * ¡ATENCIÓN NAVEGANTES!
              * El orden aquí IMPORTA. Cuando accedemos al admin.itinerarium, nos devuelve las
-             * rutas colocadas en admin.php porque se encuentra primero dicha opción, si colocasemos
+             * rutas colocadas en admin.php porque se encuentra primero dicha opción, si colocásemos
              * antes las provenientes de web.php (último enrutador), nos iríamos a esas y no
              * se vería nunca el panel de administrador, solo la parte pública.
              * ¿Por qué? No lo sé.
