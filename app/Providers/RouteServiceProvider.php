@@ -38,6 +38,21 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+
+            /**
+             * ¡ATENCIÓN NAVEGANTES!
+             * El orden aquí IMPORTA. Cuando accedemos al admin.itinerarium, nos devuelve las
+             * rutas colocadas en admin.php porque se encuentra primero dicha opción, si colocasemos
+             * antes las provenientes de web.php (último enrutador), nos iríamos a esas y no
+             * se vería nunca el panel de administrador, solo la parte pública.
+             * ¿Por qué? No lo sé.
+             */
+
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->domain('admin.'.env('SITE_URL'))
+                ->group(base_path('routes/admin.php'));
+
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)
@@ -46,6 +61,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
         });
     }
 
