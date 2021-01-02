@@ -32,7 +32,7 @@ return [
     |
     */
 
-    'prefix' => env('DASHBOARD_PREFIX', '/admin'),
+    'prefix' => env('DASHBOARD_PREFIX', '/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -157,7 +157,7 @@ return [
     */
 
     'notifications' => [
-        'enabled'  => true,
+        'enabled'  => false,
         'interval' => 60,
     ],
 

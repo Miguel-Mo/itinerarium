@@ -25,57 +25,24 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            ItemMenu::label('Example screen')
+            ItemMenu::label('Escritorio')
+                ->title('Principal')
                 ->icon('monitor')
-                ->route('platform.example')
-                ->title('Navigation')
-                ->badge(function () {
-                    return 6;
-                }),
+                ->route('platform.main'),
 
-            ItemMenu::label('Dropdown menu')
-                ->slug('example-menu')
-                ->icon('code')
-                ->childs(),
+            ItemMenu::label('Usuarios')
+                ->icon('friends')
+                ->route('platform.systems.users')
+                ->permission('platform.systems.users'),
 
-            ItemMenu::label('Sub element item 1')
-                ->place('example-menu')
-                ->icon('bag'),
-
-            ItemMenu::label('Sub element item 2')
-                ->place('example-menu')
-                ->icon('heart'),
-
-            ItemMenu::label('Basic Elements')
-                ->title('Form controls')
-                ->icon('note')
+            ItemMenu::label('Artículos')
+                ->title('Web')
+                ->icon('map')
                 ->route('platform.example.fields'),
 
-            ItemMenu::label('Advanced Elements')
-                ->icon('briefcase')
+            ItemMenu::label('Ventas')
+                ->icon('euro')
                 ->route('platform.example.advanced'),
-
-            ItemMenu::label('Text Editors')
-                ->icon('list')
-                ->route('platform.example.editors'),
-
-            ItemMenu::label('Overview layouts')
-                ->title('Layouts')
-                ->icon('layers')
-                ->route('platform.example.layouts'),
-
-            ItemMenu::label('Chart tools')
-                ->icon('bar-chart')
-                ->route('platform.example.charts'),
-
-            ItemMenu::label('Cards')
-                ->icon('grid')
-                ->route('platform.example.cards'),
-
-            ItemMenu::label('Documentation')
-                ->title('Docs')
-                ->icon('docs')
-                ->url('https://orchid.software/en/docs'),
         ];
     }
 

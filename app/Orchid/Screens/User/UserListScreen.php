@@ -20,7 +20,7 @@ class UserListScreen extends Screen
      *
      * @var string
      */
-    public $name = 'User';
+    public $name = 'Usuarios';
 
     /**
      * Display header description.
